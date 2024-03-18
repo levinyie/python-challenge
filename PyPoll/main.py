@@ -1,8 +1,10 @@
 import os
 import csv
 
-output_path = os.path.join("Resources", "output.txt")
-election_data = os.path.join("Resources", "election_data.csv")
+#dir_path = os.path.dirname(os.path.realpath(__file__)) --> Sets the path.
+dir_path = os.path.dirname(os.path.realpath(__file__))
+output_path = os.path.join(dir_path, "Resources", "output.txt")
+election_data = os.path.join(dir_path, "Resources", "election_data.csv")
 
 with open(election_data) as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
@@ -54,12 +56,14 @@ with open(election_data) as csvfile:
     print('-------------------------')
 
 #Inserted the values in a tuple to be used when using csvwriter to write it in text file
-    election_tuple = (total_votes, charles, diana, raymon, total_winner)
+    election_tuple = (total_votes, charles, cperc, diana, dperc, raymon, rperc, total_winner)
 
 with open(output_path, 'w') as csvfile:
     
     csvwriter = csv.writer(csvfile, delimiter=',')
 
-    csvwriter.writerow(['Total Votes', 'Charles Casper Stockham', 'Diana DeGette', 'Raymon Anthony Doane', 'Winner'])
+    csvwriter.writerow(['Total Votes', 'Charles Casper Stockham', 'Charles Percentage', 'Diana DeGette', 'Diana Percentage', 'Raymon Anthony Doane', 'Raymon Percentage', 'Winner'])
     
     csvwriter.writerow(election_tuple)
+
+print(dir_path)

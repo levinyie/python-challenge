@@ -1,2 +1,2 @@
-Total Votes,Charles Casper Stockham,Diana DeGette,Raymon Anthony Doane,Winner
-369711,85213,272892,11606,Diana DeGette
+Total Votes,Charles Casper Stockham,Charles Percentage,Diana DeGette,Diana Percentage,Raymon Anthony Doane,Raymon Percentage,Winner
+369711,85213,23.049,272892,73.812,11606,3.139,Diana DeGette

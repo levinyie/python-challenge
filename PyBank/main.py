@@ -1,9 +1,9 @@
 import os
 import csv
 
-output_path = os.path.join("Resources", "output.csv")
-output_path = os.path.join("Resources", "output.txt")
-budget_data = os.path.join("Resources", "budget_data.csv")
+dir_path = os.path.dirname(os.path.realpath(__file__))
+output_path = os.path.join(dir_path, "Resources", "output.txt")
+budget_data = os.path.join(dir_path, "Resources", "budget_data.csv")
 
 with open(budget_data) as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
@@ -53,3 +53,5 @@ with open(output_path, 'w') as csvfile:
     csvwriter.writerow(['Total Months', 'Total Profit', 'Average Change', 'Date', 'Greatest Increase in Profits', 'Date', 'Greatest Decrease in Profits'])
 
     csvwriter.writerow(profit_tuple)
+
+    print(dir_path)
