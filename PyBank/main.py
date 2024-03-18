@@ -2,6 +2,7 @@ import os
 import csv
 
 output_path = os.path.join("Resources", "output.csv")
+output_path = os.path.join("Resources", "output.txt")
 budget_data = os.path.join("Resources", "budget_data.csv")
 
 with open(budget_data) as csvfile:
