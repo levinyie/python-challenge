@@ -1,6 +1,7 @@
 import os
 import csv
 
+output_path = os.path.join("Resources", "output.csv")
 budget_data = os.path.join("Resources", "budget_data.csv")
 
 with open(budget_data) as csvfile:
@@ -41,3 +42,13 @@ print(f"Total = ${total}")
 print(f"Average Change = ${average_change}")
 print(f"Greatest Increase in Profits: {month[max_profit_date + 1]} (${high_profit})")
 print(f"Greatest Decrease in Profits: {month[min_profit_date + 1]} (${low_profit})")
+
+profit_tuple = (count, total, average_change, month[max_profit_date + 1], high_profit, month[min_profit_date + 1], low_profit)
+
+with open(output_path, 'w') as csvfile:
+
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    csvwriter.writerow(['Total Months', 'Total Profit', 'Average Change', 'Date', 'Greatest Increase in Profits', 'Date', 'Greatest Decrease in Profits'])
+
+    csvwriter.writerow(profit_tuple)
